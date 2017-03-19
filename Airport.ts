@@ -5,15 +5,13 @@ import {Region} from './Region';
 import {City} from './City';
 import {Route} from './Route';
 import {Flight, FlightLightDescription} from './Flight';
+import {GPSPoint} from './GPSPoint';
 
 export class Airport extends RyanairGeoPlace {
 	iataCode: string;
 	name: string;
 	seoName: string;
-	coordinates: {
-		longitude: number;
-		latitude: number;
-	};
+	coordinates: GPSPoint;
 	base: boolean;
 	country: Country;
 	region: Region;
@@ -38,9 +36,9 @@ export class Airport extends RyanairGeoPlace {
 			iataCode, name, seoName, coordinates, base,
 			currencyCode, categories, priority
 		}, country, region, city, routes, seasonalRoutes){
-		[this.iataCode, this.name, this.seoName, this.coordinates, this.base
+		[this.iataCode, this.name, this.seoName, this.base
 			, this.currencyCode, this.categories, this.priority] = [
-			iataCode, name, seoName, coordinates, base,
+			iataCode, name, seoName, base,
 			currencyCode, categories, priority
 		];
 		[this.country, this.region, this.city, this.destinations, this.seasonalDestinations] =
@@ -49,5 +47,6 @@ export class Airport extends RyanairGeoPlace {
 		let f = (p:any) => p instanceof Airport;
 		this.routes = this.destinations.filter(f).map(d => new Route(this.ref, this, <any>d));
 		this.seasonalRoutes = this.seasonalDestinations.filter(f).map(d => new Route(this.ref, this, <any>d));
+		this.coordinates = new GPSPoint(coordinates.latitude, coordinates.longitude);
 	}
 }

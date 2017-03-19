@@ -2,11 +2,16 @@ import {Country, Region, City, Route, Flight, FlightLightDescription} from './ma
 import {getData} from './apiCall';
 
 (async () => {
-	let {
-		regions, cities,
-		countries, airports
-	} = await getData(true);
-	let x = await countries.get('fr').findTo(countries.get('mt'), new Date(), 100);
+	let ctx = await getData(true);
+	// countries.get('fr').
+
+	let southFrance = (await ctx.airports.get('MPL').getNearbyAirports(100)).union(
+		await ctx.getCountryByName('France').getNearbyAirports(0)
+	);
+	console.log([...southFrance.airports].map(o => o.name));
+
+	let x = await southFrance.findTo(ctx.countries.get('nl').getNearbyAirports(400), new Date(), 100);
+
 	// let x = await airports.get('MRS').findAll(new Date(), 30);
 	// let x = await airports.get('MPL').findAny(new Date(), new Date('2017-05-25'));
 	// console.log(await apiCall(ryanairApiUrl.data()))

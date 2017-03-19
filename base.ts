@@ -8,12 +8,7 @@ import {Route} from './Route';
 
 
 export let treatData = ({regions, cities, countries, airports}): RyanairContext => {
-	let o = {
-		regions: new Map<String, Region>(),
-		cities: new Map<String, City>(),
-		countries: new Map<String, Country>(),
-		airports: new Map<String, Airport>()
-	};
+	let o = new RyanairContext();
 	let singToPlur = {country: 'countries', airport: 'airports', region: 'regions', city: 'cities'};
 	let trRoutes = (l:string[]) => l.map(o => o.split(':'))
 									.map(([t,c]) => o[singToPlur[t]].get(c));
