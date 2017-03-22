@@ -1,0 +1,31 @@
+{
+  "name": "ryanair",
+  "version": "1.0.0",
+  "description": "Unofficial Ryanair library written in TypeScript",
+  "main": "build/main.js",
+  "typings": "js/main",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/W95Psp/RyanairJs.git"
+  },
+  "keywords": [
+    "ryanair",
+    "api",
+    "js",
+    "typescript",
+    "ts",
+    "flight"
+  ],
+  "author": "Lucas Franceschino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/W95Psp/RyanairJs/issues"
+  },
+  "homepage": "https://github.com/W95Psp/RyanairJs#readme",
+  "dependencies": {
+    "request": "^2.81.0"
+  }
+}

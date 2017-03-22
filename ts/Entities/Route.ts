@@ -1,4 +1,4 @@
-import {ryanairApiUrl, apiCall} from './apiCall';
+import {ryanairApiUrl, apiCall} from '../apiCall';
 import {RyanairGeoPlace} from './RyanairGeoPlace';
 import {RyanairContext} from './RyanairContext';
 

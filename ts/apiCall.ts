@@ -1,6 +1,6 @@
 import * as request from 'request';
 import * as fs from 'fs';
-import {RyanairContext} from './RyanairContext';
+import {RyanairContext} from './Entities/RyanairContext';
 import {treatData} from './base';
 
 export let getData = async (cache: boolean = false) : Promise<RyanairContext> => {

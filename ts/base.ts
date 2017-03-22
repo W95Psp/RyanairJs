@@ -1,10 +1,10 @@
-import {RyanairContext} from './RyanairContext';
-import {Country} from './Country';
-import {Airport} from './Airport';
-import {City} from './City';
-import {Region} from './Region';
-import {Flight} from './Flight';
-import {Route} from './Route';
+import {RyanairContext} from './Entities/RyanairContext';
+import {Country} from './Entities/Country';
+import {Airport} from './Entities/Airport';
+import {City} from './Entities/City';
+import {Region} from './Entities/Region';
+import {Flight} from './Entities/Flight';
+import {Route} from './Entities/Route';
 
 
 export let treatData = ({regions, cities, countries, airports}): RyanairContext => {
