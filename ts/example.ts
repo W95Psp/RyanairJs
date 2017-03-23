@@ -1,5 +1,4 @@
-import {Country, Region, City, Route, Flight, FlightLightDescription} from './main';
-import {getData} from './apiCall';
+import {Country, Region, City, Route, Flight, FlightLightDescription, getData} from './main';
 
 (async () => {
 	let ctx = await getData(true);

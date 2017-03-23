@@ -7,9 +7,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const apiCall_1 = require("./apiCall");
+const main_1 = require("./main");
 (() => __awaiter(this, void 0, void 0, function* () {
-    let ctx = yield apiCall_1.getData(true);
+    let ctx = yield main_1.getData(true);
     // countries.get('fr').
     let southFrance = (yield ctx.airports.get('MPL').getNearbyAirports(100)).union(yield ctx.getCountryByName('France').getNearbyAirports(0));
     console.log([...southFrance.airports].map(o => o.name));
